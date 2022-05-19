@@ -15,6 +15,12 @@ export default function Task () {
   },[]);
 
 
+  const onClick = (id) => {
+    const test = task.filter((obj) => obj.id !== id);
+    setTask(test);
+  };
+
+
   return (
     <div className="task_container">
       {console.log(task)}
@@ -30,16 +36,16 @@ export default function Task () {
       <div className="engloba_task">
       <h1>Tarefas</h1>
       <h4>Gerencie suas tarefas aqui.</h4>
-      <div class="container table-responsive">          
-      <table class="table">
+      <div className="container table-responsive">          
+      <table className="table">
           <thead>
           <tr>
-              <th class="task-id">#</th>
-              <th class="task">Tarefa</th>
-              <th class="date">Data</th>
-              <th class="status">Status</th>
-              <th class="update">Editar</th>
-              <th class="remove">Remover</th>
+              <th className="task-id">#</th>
+              <th className="task">Tarefa</th>
+              <th className="date">Data</th>
+              <th className="status">Status</th>
+              <th className="update">Editar</th>
+              <th className="remove">Remover</th>
           </tr>
           </thead>
 
@@ -52,10 +58,10 @@ export default function Task () {
               <td>{obj.data}</td>
               <td>{obj.status}</td>
               <td>
-                <button type="button" class="btn btn-outline-info btn-sm">Editar</button>
+                <button type="button" className="btn btn-outline-info btn-sm">Editar</button>
               </td>
               <td>
-                <button class="btn btn-sm btn-outline-danger" type="button">Remover</button>
+                <button onClick={() => onClick(obj.id)} className="btn btn-sm btn-outline-danger" type="button">Remover</button>
               </td>
           </tr>
             ))}
