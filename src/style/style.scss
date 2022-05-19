@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;800&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Epilogue', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+
+.task_container {
+  max-width: 1216px;
+  height: 100%;
+
+  header {
+    width: 100vw;
+    background-color: #115235;
+    height: 72px;
+    color: white;
+    font-weight: 800;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    h1 {
+      font-weight: 800;
+      text-align: center;
+      margin: 0;
+    }
+
+    div {
+      max-width: 1216px;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .btn_header {
+    background-color: #2FC18C;
+    padding: 16px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 800;
+
+    &:hover {
+       background-color: #099662;
+    }
+  }
+
+  .task_task {
+    width: 100vw;
+    height: 100%;
+    margin-top: 72px + 32px;
+
+    .engloba_task {
+      max-width: 1216px;
+      height: 100%;
+      margin: 0 auto;
+
+      h1 {
+        color: #115235;
+        font-size: 56px;
+        display:inline-block; 
+        font-weight: 800;
+        border-bottom: 10px solid #1a1a1a;
+        margin-bottom: 32px;
+      }
+
+      h4 {
+        color: #525252;
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+
+    }
+  }
+}
+
+
