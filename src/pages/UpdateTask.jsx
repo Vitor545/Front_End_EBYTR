@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header'
 import { useParams, useHistory } from 'react-router-dom';
+import { updateTask } from '../services/fetchAPI';
 
 export default function UpdateTask() {
   const history = useHistory();
@@ -17,10 +18,8 @@ export default function UpdateTask() {
     setstatusCreate(target.value);
   };
 
-  const onClick = () => {
-    // CRIA DEPOIS REDIRECIONA
-    console.log(id, taskCreate, statusCreate )
-    // REDIRECIONE AQUI
+  const onClick = async () => {
+    await updateTask(taskCreate, statusCreate, id);
     history.push("/");
   };
 
@@ -48,7 +47,7 @@ export default function UpdateTask() {
                 <option value="pronto">Pronto</option>
               </select>
             </div>
-            <button onClick={onClick} className="btn_create" type="button">Criar</button>
+            <button onClick={onClick} className="btn_create" type="button">Editar</button>
           </div>
         </div>
     </div>

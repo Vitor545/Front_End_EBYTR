@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CreateTaskComp from '../components/CreateTaskComp'
-import { Link } from 'react-router-dom';
-import { getTask } from '../services/fetchAPI';
+import { getTask, deleteTask } from '../services/fetchAPI';
 
 
 export default function Task () {
@@ -13,14 +12,16 @@ export default function Task () {
     setTask(tasks);
   };
 
-  useEffect(async () => {
+
+  useEffect(() => {
     requestAPI();
-  },[]);
+  },[task]);
 
 
-  const onClick = (id) => {
+  const onClick = async (id) => {
     const test = task.filter((obj) => obj.id !== id);
     setTask(test);
+    await deleteTask(id);
   };
 
 

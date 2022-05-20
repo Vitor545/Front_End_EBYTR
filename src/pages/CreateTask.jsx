@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Header from '../components/Header'
-import { useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { createTask } from '../services/fetchAPI';
 
 const dayName = new Array ("domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado")
 const monName = new Array ("janeiro", "fevereiro", "março", "abril", "Maio", "junho", "agosto", "outubro", "novembro", "dezembro")
 
 export default function CreateTask() {
-  const history = useHistory();
   const [taskCreate , setTaskCreate] = useState('Não digitado');
   const [statusCreate , setstatusCreate] = useState('Não digitado');
 
@@ -18,13 +18,10 @@ export default function CreateTask() {
     setstatusCreate(target.value);
   };
 
-  const onClick = () => {
+  const onClick = async () => {
     const now = new Date
     const dates  = dayName[now.getDay() ] + ", " + now.getDate () + " de " + monName [now.getMonth() ]   +  " de "  +     now.getFullYear ()
-    // CRIA DEPOIS REDIRECIONA
-    console.log(taskCreate, statusCreate, dates )
-    // REDIRECIONE AQUI
-    history.push("/");
+    await createTask(taskCreate, dates, statusCreate);
   };
 
   const create = () => (
@@ -51,7 +48,9 @@ export default function CreateTask() {
                 <option value="pronto">Pronto</option>
               </select>
             </div>
-            <button onClick={onClick} className="btn_create" type="button">Criar</button>
+            <NavLink to="/"exact >
+              <button onClick={onClick} className="btn_create" type="button">Criar</button>
+            </NavLink>
           </div>
         </div>
     </div>
