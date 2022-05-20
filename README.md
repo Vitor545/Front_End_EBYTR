@@ -8,7 +8,7 @@
 
 <br />
 
-<img width=100% src="ezgif.com-gif-maker.gif"></img>
+<img width=100% src="Front.png"></img>
 
 <br/>
 
