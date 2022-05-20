@@ -1,11 +1,11 @@
 import React from 'react';
 import './style/style.css';
-import Task from './pages/Task'
+import Routes from './components/Routes'
+
 
 function App() {
     return (
-      <Task />
+        <Routes />
     );
 }
-
 export default App;

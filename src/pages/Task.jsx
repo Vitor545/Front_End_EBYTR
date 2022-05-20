@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import CreateTaskComp from '../components/CreateTaskComp'
+import { Link } from 'react-router-dom';
 import { getTask } from '../services/fetchAPI';
+
 
 export default function Task () {
 
@@ -28,7 +31,7 @@ export default function Task () {
       <header>
         <div className="nav_task">
           <h1>EBYTR</h1>
-          <button className="btn_header">Criar Tarefa</button>
+            <a href="createtask" className="btn_header">Criar Tarefa</a>
         </div>
       </header>
 
@@ -48,24 +51,7 @@ export default function Task () {
               <th className="remove">Remover</th>
           </tr>
           </thead>
-
-          <tbody>
-
-            {task.map((obj)=> (
-              <tr>
-              <td>{obj.id}</td>
-              <td>{obj.tarefa}</td>
-              <td>{obj.data}</td>
-              <td>{obj.status}</td>
-              <td>
-                <button type="button" className="btn btn-outline-info btn-sm">Editar</button>
-              </td>
-              <td>
-                <button onClick={() => onClick(obj.id)} className="btn btn-sm btn-outline-danger" type="button">Remover</button>
-              </td>
-          </tr>
-            ))}
-          </tbody>
+          <CreateTaskComp task={task} onClick={onClick}/>
       </table>
     </div>
 

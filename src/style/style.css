@@ -56,6 +56,7 @@ body {
   padding: 16px;
   border: none;
   outline: none;
+  text-decoration: none;
   border-radius: 6px;
   color: white;
   font-weight: 800;
@@ -90,5 +91,99 @@ body {
   color: #525252;
   font-weight: 600;
   font-size: 18px;
+}
+
+.btn_create {
+  background-color: #115235;
+  padding: 16px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  color: #f7f7f7;
+  font-weight: 800;
+}
+
+.btn_create:hover {
+  background-color: #369F70;
+}
+
+.bloco h2 {
+  width: 256px;
+  height: 32px;
+  background-color: #115235;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #f7f7f7;
+  font-weight: 600;
+  font-size: 16px;
+  border-bottom: 10px solid #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.input_createTask {
+  width: 256px;
+  outline: none;
+  font-family: 'Epilogue', sans-serif;
+  border: #ccc 1px solid;
+  border-radius: 4px;
+  color: #115235;
+}
+
+.input_createTask::-webkit-input-placeholder {
+  color: #115235;
+  text-align: center;
+}
+
+.input_createTask:-ms-input-placeholder {
+  color: #115235;
+  text-align: center;
+}
+
+.input_createTask::-ms-input-placeholder {
+  color: #115235;
+  text-align: center;
+}
+
+.input_createTask::placeholder {
+  color: #115235;
+  text-align: center;
+}
+
+.input_createTask:focus, .select_createTask:focus {
+  outline: none;
+  border: #2FC18C 2px solid;
+}
+
+.blocoMaior {
+  margin-bottom: 72px;
+}
+
+.blocoMaior2 {
+  margin-bottom: 36px;
+}
+
+.containerBig {
+  margin-top: 56px;
+}
+
+.select_createTask {
+  width: 256px;
+  outline: none;
+  font-family: 'Epilogue', sans-serif;
+  border: #ccc 1px solid;
+  border-radius: 4px;
+  color: #115235;
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */
